@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 Route::get('/get_province', [GetFromAPIController::class, 'getProvince']);
 Route::get('/get_city', [GetFromAPIController::class, 'getCity']);
+Route::get('/get_specific_city/{id}', [GetFromAPIController::class, 'getSpecificCity']);
+Route::get('/get_specific_province/{id}', [GetFromAPIController::class, 'getSpecificProvince']);
