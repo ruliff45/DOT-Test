@@ -21,15 +21,17 @@ class GetFromAPIController extends Controller
         return response()->json($response->body());
     }
 
-    public function getSpecificCity($id)
+    public function getSpecificCity(Request $request)
     {
-        $city = City::find($id);
+        $param = $request->query();
+        $city = City::find($param);
         return response()->json($city);
     }
 
-    public function getSpecificProvince($id)
+    public function getSpecificProvince(Request $request)
     {
-        $province = Province::where('province_id', $id)->get();
+        $param = $request->query();
+        $province = Province::where('province_id', $param)->get();
         return response()->json($province);
     }
 }

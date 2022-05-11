@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GetFromAPIController;
+use App\Models\Province;
+use Illuminate\Http\Client\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +21,5 @@ Route::get('/', function () {
 });
 Route::get('/get_province', [GetFromAPIController::class, 'getProvince']);
 Route::get('/get_city', [GetFromAPIController::class, 'getCity']);
-Route::get('/get_specific_city/{id}', [GetFromAPIController::class, 'getSpecificCity']);
-Route::get('/get_specific_province/{id}', [GetFromAPIController::class, 'getSpecificProvince']);
+Route::get('/search/city', [GetFromAPIController::class, 'getSpecificCity']);
+Route::get('/search/province', [GetFromAPIController::class, 'getSpecificProvince']);
