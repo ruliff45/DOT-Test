@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('isAuthenticated')->default(0);
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };
