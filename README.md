@@ -4,7 +4,7 @@ The steps that are needed to perform before executing the code for the question 
 2. Create new database named as dot_db in the phpmyadmin
 3. To test the solution, run php artisan serve in the terminal/console
 4. Then proceed to the browser and go to localhost:8000
-5. To initiate the database, run php artisan migrate --seed in the terminal
+5. To initiate the database tables, run php artisan migrate in the terminal
 <h2> Question 1 </h2>
 In the question 1, the code is pretty straighfoward, it just fetch the data from the given api url with the key and display it. To test it use the url localhost:8000/get_city for the city and localhost:8000/get_province for the province. The source code is available on the app/Http/Controller/GetFromAPIController.php and the routing is on the routes/web.php
 
