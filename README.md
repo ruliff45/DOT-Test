@@ -10,3 +10,6 @@ In the question 1, the code is pretty straighfoward, it just fetch the data from
 
 <h2>Question 2 </h2>
 In the question 2, the source code is available on app/console/command/fetchCity for the City and fetchProvince for the Province. To run the command, run php artisan fetch:city for the city table and php artisan fetch:province for the province table
+
+<h2> Question 3 </h2>
+In the question 3, the routing is available on the routes/web.php and the source code is available on app/Http/Controller/GetFromAPIController.php. To view the result, go to url and input localhost:8000/search/city?id=(1-501). To search province, go to url and input localhost:8000/search/province?id=(1-34). the id is the parameter that the user required to input. so that the code could fetch the city/province based on the id.
