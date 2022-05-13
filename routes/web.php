@@ -1,6 +1,8 @@
 <?php
-
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SearchController;
+use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', [LoginController::class, 'login']);
+
 Route::get('/search', [SearchController::class, 'swapableImplementation']);
+
+Route::get('/search_auth', [SearchController::class, 'authSearch']);
