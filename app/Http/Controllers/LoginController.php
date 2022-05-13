@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,8 +12,8 @@ class LoginController extends Controller
     {
         $credentials = $request->query();
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/');
+            $user = User::where('email', $credentials['email'])->get();
+            return $user;
         }
     }
 }

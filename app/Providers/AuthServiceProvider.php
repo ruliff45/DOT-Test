@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Http;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -24,6 +27,14 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        Gate::define('is-authenticated', function (User $user) {
+            if ($user->isAuthenticated === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
 
         //
     }

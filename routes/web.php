@@ -24,4 +24,4 @@ Route::get('/login', [LoginController::class, 'login']);
 
 Route::get('/search', [SearchController::class, 'swapableImplementation']);
 
-Route::get('/search_auth', [SearchController::class, 'authSearch']);
+Route::get('/search_auth', [SearchController::class, 'authorizeSearch']);
